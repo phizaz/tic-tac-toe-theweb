@@ -1,0 +1,15 @@
+<!doctype html><html ng-app="ticTacToe"><head><meta charset="utf-8"><title>tic-tac-toe</title><meta name="description" content=""><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="styles/vendor-1dddaadd0b.css"><link rel="stylesheet" href="styles/app-93d17dc2cf.css"></head><body><!--[if lt IE 10]>
+ <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+ <![endif]--><div class="container" ng-controller="MainController as main"><div ng-show="main.game.isFinished"><h1 ng-show="main.game.winner">The winner is <span ng-show="main.game.winner === 1">computer</span> <span ng-show="main.game.winner === 2">you</span></h1><h1 ng-hide="main.game.winner">Draw!!</h1><p><button type="button" class="btn-default btn-lg btn" ng-click="main.restart()">Restart</button></p></div><table class="table"><tr ng-repeat="row in main.game.table track by $index" ng-init="i = $index"><td ng-repeat="col in row track by $index" ng-init="j = $index" ng-click="main.humanMove(i, j)" style="text-align: center;" ng-class="{ 'red': col === 1, 'green': col === 2 }"><h3 ng-bind="col" style="line-height: 4em;"></h3></td></tr></table></div><style>
+      td:hover {
+        background-color: rgba(0,0,0,0.2);
+      }
+      td.red {
+        background-color: red;
+        color: white;
+      }
+      td.green {
+        background-color: green;
+        color: white;
+      }
+    </style><script src="scripts/vendor-a5793e59a6.js"></script><script src="scripts/app-403539d59c.js"></script></body></html>
